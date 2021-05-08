@@ -52,9 +52,14 @@
 				<dict>
 					<key>source</key>
 					<string>on run {input, parameters}
-	tell application "Alacritty"		activate	end tell
+
+	tell application "Alacritty"
+		activate
+	end tell
+	delay 0.3
 	tell application "System Events" to tell process "Alacritty"    
-		set filePath to POSIX path of item 1 of input	    keystroke "" &amp; filePath
+		set filePath to POSIX path of item 1 of input
+	    keystroke "" &amp; filePath
 	end tell
 end run</string>
 				</dict>
@@ -122,10 +127,19 @@ end run</string>
 	<dict/>
 	<key>workflowMetaData</key>
 	<dict>
+		<key>applicationBundleID</key>
+		<string>com.apple.finder</string>
 		<key>applicationBundleIDsByPath</key>
-		<dict/>
+		<dict>
+			<key>/System/Library/CoreServices/Finder.app</key>
+			<string>com.apple.finder</string>
+		</dict>
+		<key>applicationPath</key>
+		<string>/System/Library/CoreServices/Finder.app</string>
 		<key>applicationPaths</key>
-		<array/>
+		<array>
+			<string>/System/Library/CoreServices/Finder.app</string>
+		</array>
 		<key>customImageFileData</key>
 		<data>
 		iVBORw0KGgoAAAANSUhEUgAAAIAAAAByCAYAAACbZNnZAAAABGdBTUEAALGP
@@ -351,15 +365,19 @@ end run</string>
 		<key>customImageFileExtension</key>
 		<string>png</string>
 		<key>inputTypeIdentifier</key>
-		<string>com.apple.Automator.nothing</string>
+		<string>com.apple.Automator.fileSystemObject</string>
 		<key>outputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>presentationMode</key>
-		<integer>11</integer>
+		<integer>15</integer>
 		<key>processesInput</key>
 		<integer>0</integer>
+		<key>serviceApplicationBundleID</key>
+		<string>com.apple.finder</string>
+		<key>serviceApplicationPath</key>
+		<string>/System/Library/CoreServices/Finder.app</string>
 		<key>serviceInputTypeIdentifier</key>
-		<string>com.apple.Automator.nothing</string>
+		<string>com.apple.Automator.fileSystemObject</string>
 		<key>serviceOutputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>serviceProcessesInput</key>
